@@ -1,0 +1,9 @@
+# Ignoruj środowisko virtualne
+venv/
+
+# Ignoruj pliki systemowe
+__pycache__/
+*.pyc
+
+# Ignoruj pliki VSCode
+.vscode/
