@@ -9,6 +9,21 @@ CORS(app)  # Włączenie CORS – potrzebne dla Front-End dla Next.js
 # Ścieżka do bazy danych SQLite
 DB_PATH = 'expenses.db'
 
+# 🔨 Inicjalizacja bazy danych
+def init_db():
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS expenses (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            amount REAL NOT NULL,
+            category TEXT NOT NULL,
+            date TEXT NOT NULL
+        )
+    ''')
+    conn.commit()
+    conn.close()
+
 # Funkcja pomocnicza do otwarcia połączenia z bazą
 def get_db_connection():
     conn = sqlite3.connect(DB_PATH)
@@ -80,5 +95,11 @@ def get_summary():
 
     return jsonify({'total': round(total, 2), 'by_category': summary})
 
+@app.route('/health')
+def health():
+    return jsonify({'status': 'ok'})
+
+
 if __name__ == '__main__':
+    init_db()  # ← URUCHAMIAMY TWORZENIE TABELI PRZY STARCIE
     app.run(debug=True)
