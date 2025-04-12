@@ -6,7 +6,7 @@ Aplikacja do zarządzania codziennymi wydatkami z przejrzystym interfejsem, wykr
 
 ## 📸 Podgląd aplikacji
 
-<img src="screenshot.png" alt="Zrzut ekranu Kalkulatora Finansów" width="900"/>
+<img src="public/screenshot.png" alt="Zrzut ekranu aplikacji" width="900"/>
 
 ---
 
