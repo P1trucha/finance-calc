@@ -3,7 +3,7 @@
 
 
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(135deg, #d27070, #ebedee, #4374a2);
   --foreground: #171717;
 }
 
@@ -22,7 +22,11 @@
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3f0ff, #efe8fe, #fdfbfa);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  @apply bg-gradient-to-tr from-[#f0f4ff] via-[#f7d9ff] to-[#ccefff];
+
 }

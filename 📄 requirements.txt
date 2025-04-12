@@ -1,5 +1,23 @@
 Paczki do zainstalowania:
 
+BACK_END
+
+# Flask – mikroframework do tworzenia aplikacji webowych i API
 flask
-flask_sqlalchemy
-flask_cors
+
+# Flask-CORS – pozwala na połączenia z innych domen (np. frontend na localhost:3000)
+flask-cors
+
+# matplotlib – biblioteka do tworzenia wykresów (np. analiza danych w konsoli lub eksport)
+matplotlib
+
+FRONT_END
+
+# Chaart.js 
+npm install chart.js react-chartjs-2
+
+# Typescript
+npm install -D typescript @types/react @types/node
+
+# Eslint
+npm install -D eslint eslint-config-next
