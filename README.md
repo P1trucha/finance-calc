@@ -1,97 +1,74 @@
-Aplikacja - Kalkulator finansów 
+💸 Kalkulator Finansów – Twoje codzienne wydatki pod kontrolą!
+Aplikacja webowa umożliwiająca szybkie dodawanie, przeglądanie i analizę codziennych wydatków. Wykorzystuje nowoczesny frontend (Next.js + Tailwind CSS) i lekki backend (Flask + SQLite), dzięki czemu działa błyskawicznie – lokalnie i bez zbędnych zależności 🚀
+
+🧠 Co potrafi aplikacja?
+✅ Dodawanie wydatków – poprzez prosty formularz z kategorią, kwotą i datą
+📅 Wyświetlanie dziennych i tygodniowych wydatków
+📊 Podsumowanie z wykresem kołowym – udział procentowy wydatków wg kategorii
+🗑️ Usuwanie wydatków jednym kliknięciem
+🧊 Nowoczesny interfejs – efekt szkła (glassmorphism), gradienty i responsywny design
+
+🏗️ Architektura projektu
+📦 Backend: Flask + SQLite
+Framework: Flask
+
+Obsługa CORS: flask-cors
+
+Baza danych: SQLite
+
+Wykresy lokalne (dla testów): matplotlib
+
+REST API:
+
+POST /expenses – dodaje nowy wydatek
+
+GET /expenses/today – pobiera dzisiejsze wydatki
+
+GET /expenses/week – pobiera wydatki z tygodnia
+
+GET /expenses/summary – zwraca sumę i procenty
+
+DELETE /expenses/<id> – usuwa wydatek
+
+🌐 Frontend: Next.js + Tailwind CSS
+Framework: Next.js (React)
+
+Stylowanie: Tailwind CSS
+
+Wykresy: Chart.js + react-chartjs-2
+
+TypeScript dla typowania
+
+Całość stylowana z wykorzystaniem efektu szkła, gradientów i animacji
+
+🧪 Jak działa?
+🔁 Przy uruchomieniu aplikacja:
+
+Łączy się z lokalną bazą danych SQLite
+
+Tworzy tabelę expenses jeśli nie istnieje
+
+Przechowuje dane: id, amount, category, date
+
+📥 Użytkownik dodaje wydatek → dane trafiają do bazy → frontend automatycznie odświeża widok i wykres
+
+📦 Instalacja
+✅ Backend (Python)
+Plik requirements.txt:
+
+flask               # framework do tworzenia API
+flask-cors          # obsługa CORS (dla frontend)
+matplotlib          # do generowania wykresów (lokalnie, opcjonalnie)
+Instalacja:
 
 
-🧠 Etap 1: Planowanie funkcjonalności
-🎯 Główne funkcje aplikacji:
-Formularz do dodawania wydatków (kwota + kategoria).
+pip install -r requirements.txt
+✅ Frontend (Next.js + Tailwind)
 
-Dynamiczne wyświetlanie wydatków:
+npm install next react react-dom
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+npm install chart.js react-chartjs-2
+npm install -D typescript @types/react @types/node
 
-suma z danego dnia,
 
-suma z danego tygodnia.
-
-Wyświetlanie całkowitego wydanego salda.
-
-Diagram kołowy prezentujący procentowy udział wydatków w kategoriach.
-
-🏗️ Etap 2: Architektura aplikacji
-📦 Backend (Python, np. Flask lub FastAPI)
-Endpointy REST API:
-
-POST /expenses – dodanie nowego wydatku.
-
-GET /expenses/today – pobranie wydatków z dzisiaj.
-
-GET /expenses/week – pobranie wydatków z bieżącego tygodnia.
-
-GET /expenses/summary – zwraca sumę wydatków i ich podział procentowy.
-
-Baza danych (SQLite na początek):
-
-Tabela expenses: id, amount, category, date.
-
-🌐 Frontend (HTML + CSS + czysty JS)
-Formularz z polami:
-
-Kwota (input typu number).
-
-Kategoria (select: Jedzenie, Paliwo, Ubrania...).
-
-Przycisk Dodaj.
-
-Sekcje:
-
-Lista wydatków z danego dnia/tygodnia.
-
-Pole z sumą wydatków.
-
-Diagram kołowy (można użyć np. Chart.js lub narysować na canvas).
-
-⚙️ Etap 3: Szczegółowe kroki działania
-1. Stworzenie backendu (Python)
-Inicjalizacja projektu (venv, Flask lub FastAPI).
-
-Utworzenie bazy danych i modelu danych.
-
-Utworzenie endpointów REST API do pobierania i dodawania wydatków.
-
-Zaimplementowanie logiki obliczającej sumy i procenty.
-
-2. Frontend
-Stworzenie prostego UI (HTML/CSS).
-
-Po stronie JS:
-
-Obsługa formularza (pobieranie danych, wysyłka do API).
-
-Pobieranie danych z API (fetch).
-
-Aktualizacja sumy wydatków i tabeli.
-
-Generowanie wykresu (pie chart) na podstawie danych.
-
-3. Integracja front-back
-Połączenie frontendu z API (adresy endpointów, testy działania).
-
-Obsługa błędów (walidacja danych, brak połączenia itp.).
-
-4. Testowanie i poprawki
-Testowanie działania w różnych przeglądarkach.
-
-Sprawdzenie poprawności sum, wyświetlanych danych i diagramu.
-
-Ulepszanie UI (opcjonalne: tryb ciemny, responsywność itp.).
-
-🚀 Etap 4: Pomysły na rozwój (kolejne wersje)
-Rejestracja i logowanie użytkowników.
-
-Możliwość filtrowania wydatków po dacie.
-
-Eksport do CSV lub PDF.
-
-Przypomnienia / alerty o przekroczonym budżecie.
-
-Kategorie dodawane przez użytkownika.
-
-Aplikacja mobilna (np. PWA lub Flutter w przyszłości).
