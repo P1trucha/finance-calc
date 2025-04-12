@@ -1,74 +1,53 @@
-💸 Kalkulator Finansów – Twoje codzienne wydatki pod kontrolą!
-Aplikacja webowa umożliwiająca szybkie dodawanie, przeglądanie i analizę codziennych wydatków. Wykorzystuje nowoczesny frontend (Next.js + Tailwind CSS) i lekki backend (Flask + SQLite), dzięki czemu działa błyskawicznie – lokalnie i bez zbędnych zależności 🚀
+# 💸 Kalkulator Finansów
 
-🧠 Co potrafi aplikacja?
-✅ Dodawanie wydatków – poprzez prosty formularz z kategorią, kwotą i datą
-📅 Wyświetlanie dziennych i tygodniowych wydatków
-📊 Podsumowanie z wykresem kołowym – udział procentowy wydatków wg kategorii
-🗑️ Usuwanie wydatków jednym kliknięciem
-🧊 Nowoczesny interfejs – efekt szkła (glassmorphism), gradienty i responsywny design
+Aplikacja do zarządzania codziennymi wydatkami z przejrzystym interfejsem, wykresem kołowym 📊 i stylem glassmorphism ✨
 
-🏗️ Architektura projektu
-📦 Backend: Flask + SQLite
-Framework: Flask
+---
 
-Obsługa CORS: flask-cors
+## 📸 Podgląd aplikacji
 
-Baza danych: SQLite
+<img src="screenshot.png" alt="Zrzut ekranu Kalkulatora Finansów" width="900"/>
 
-Wykresy lokalne (dla testów): matplotlib
+---
 
-REST API:
+## 🎯 Funkcje aplikacji
 
-POST /expenses – dodaje nowy wydatek
+✅ Dodawanie wydatków (kwota, kategoria, data)  
+✅ Dzisiejsze wydatki w formie listy  
+✅ Całkowita suma wydatków  
+✅ Procentowy udział kategorii na wykresie kołowym  
+✅ Efekt glassmorphism + stylowy interfejs  
+✅ Responsywny frontend z Next.js + TailwindCSS  
+✅ Prosty backend REST API z Flask + SQLite  
 
-GET /expenses/today – pobiera dzisiejsze wydatki
+---
 
-GET /expenses/week – pobiera wydatki z tygodnia
+## ⚙️ Jak działa aplikacja
 
-GET /expenses/summary – zwraca sumę i procenty
+- 💾 **Backend (Python, Flask + SQLite)**:
+  - `POST /expenses` – dodaje nowy wydatek
+  - `GET /expenses/today` – dzisiejsze wydatki
+  - `GET /expenses/summary` – suma i udział procentowy
 
-DELETE /expenses/<id> – usuwa wydatek
+- 💅 **Frontend (Next.js + TailwindCSS)**:
+  - Formularz do dodania wydatku
+  - Pobieranie danych z API
+  - Rysowanie wykresu kołowego (Chart.js)
+  - Szklany efekt tła (glassmorphism)
 
-🌐 Frontend: Next.js + Tailwind CSS
-Framework: Next.js (React)
+---
 
-Stylowanie: Tailwind CSS
+## 🔌 Instalacja backendu (Flask)
 
-Wykresy: Chart.js + react-chartjs-2
+```bash
+# Utwórz i aktywuj środowisko
+python3 -m venv venv
+source venv/bin/activate
 
-TypeScript dla typowania
-
-Całość stylowana z wykorzystaniem efektu szkła, gradientów i animacji
-
-🧪 Jak działa?
-🔁 Przy uruchomieniu aplikacja:
-
-Łączy się z lokalną bazą danych SQLite
-
-Tworzy tabelę expenses jeśli nie istnieje
-
-Przechowuje dane: id, amount, category, date
-
-📥 Użytkownik dodaje wydatek → dane trafiają do bazy → frontend automatycznie odświeża widok i wykres
-
-📦 Instalacja
-✅ Backend (Python)
-Plik requirements.txt:
-
-flask               # framework do tworzenia API
-flask-cors          # obsługa CORS (dla frontend)
-matplotlib          # do generowania wykresów (lokalnie, opcjonalnie)
-Instalacja:
-
-
+# Zainstaluj wymagane paczki
 pip install -r requirements.txt
-✅ Frontend (Next.js + Tailwind)
 
-npm install next react react-dom
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-npm install chart.js react-chartjs-2
-npm install -D typescript @types/react @types/node
+# Uruchom backend
+python3 app.py
 
 
